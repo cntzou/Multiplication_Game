@@ -1,0 +1,48 @@
+# Ask the answer of the product of the two numbers
+# Check if the answer is correct
+# If correct, say "Good job Iris!! :)" and go on to the next question
+# If not correct, say, "Oops! Try again, Iris" until this little one got it right!
+# End the loop when all numbers has been tested.
+
+
+import random
+# import emoji
+
+# Output two numbers
+loop_num = 1
+num_of_Qs = 5
+
+welcome = "-"*31 + " Welcome to cat multiplication game " +"-"*31
+print(welcome)
+print("  ^_^    "*11)
+print(" (@ @)   "*11)
+print(" (` \")~~ "*11)
+print(welcome)
+
+while loop_num <= num_of_Qs:
+    first_num = random.randint(2,5)
+    second_num = a = random.randint(1,9)
+#    print(first_num, second_num)
+    if loop_num  == num_of_Qs:
+        print("Last question:")
+    else:
+        print("Q{}:".format(loop_num ))
+        
+    question = "What is {} times {}? ".format(first_num, second_num)
+    answer = int( input(question) )
+
+    while answer != first_num*second_num:
+        print("\nOops! Try again, Iris!\n")
+        answer = int( input(question) )
+        
+    if  answer == first_num*second_num:
+        print("Good job Iris!! :)")
+        print("  ^_^    "*( loop_num ))
+        print(" (@ @)   "*( loop_num ))
+        print(" (` \")~~ "*( loop_num ))
+    if loop_num == num_of_Qs:
+        print("\nEnd of game :) Well done Iris!")
+## want to add emoji
+#        print("\N{winking face}")
+    loop_num = loop_num +1
+    

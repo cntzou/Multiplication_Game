@@ -8,7 +8,6 @@
 import random
 # import emoji
 
-# Output two numbers
 loop_num = 1
 num_of_Qs = 5
 
@@ -19,9 +18,12 @@ print(" (@ @)   "*11)
 print(" (` \")~~ "*11)
 print(welcome)
 
+name = input("What is your name? ").strip().capitalize()
+num_of_Qs = int( input("How many questions? ") )
+
 while loop_num <= num_of_Qs:
     first_num = random.randint(2,5)
-    second_num = a = random.randint(1,9)
+    second_num = a = random.randint(2,9)
 #    print(first_num, second_num)
     if loop_num  == num_of_Qs:
         print("Last question:")
@@ -32,11 +34,11 @@ while loop_num <= num_of_Qs:
     answer = int( input(question) )
 
     while answer != first_num*second_num:
-        print("\nOops! Try again, Iris!\n")
+        print("\nOops! Try again, {}!\n".format(name))
         answer = int( input(question) )
         
     if  answer == first_num*second_num:
-        print("Good job Iris!! :)")
+        print("Good job {}!! :)".format(name))
         print("  ^_^    "*( loop_num ))
         print(" (@ @)   "*( loop_num ))
         print(" (` \")~~ "*( loop_num ))
@@ -45,4 +47,3 @@ while loop_num <= num_of_Qs:
 ## want to add emoji
 #        print("\N{winking face}")
     loop_num = loop_num +1
-    
